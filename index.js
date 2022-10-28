@@ -175,7 +175,7 @@ NOT: DÖNDÜĞÜNÜZ DİZİN YUKARIDAKİ BİÇİMLE EŞLEŞMESİ GEREKİR, YA DA
 ÖRNEK: fenomenler dizisi ve 3 sayısı ile indekseGoreFenomen çağrılırsa, `3. indekste bulunan fenomen: Leo Messi' */
 
 function indekseGoreFenomen(fenomenler,i) {
-  var birles = ` ${i} . indekste bulunan fenomen: ${fenomenler[i].profile} `
+  var birles = `${i}. indekste bulunan fenomen: ${fenomenler[i].profile}`; // kenan aksoy <3
   return birles;
 
 }
@@ -264,8 +264,16 @@ Aşağıdakileri yapmak için enFenomenler'yi kullanın:
 */
 
 function enFenomenler(fenomenler) {
-  /*kod*/
+  var yeni_fnm = fenomenler;
+  var bos_dizi = [];
+  for(var i = 0 ; i<fenomenler.length;i++){
+    if(fenomenler[i].followers>100000000){
+      bos_dizi.push(fenomenler[i].profile);
+    }
+  }
+  return bos_dizi;
 }
+console.log(enFenomenler(fenomenler));
 
 
 /* Görev 8:
@@ -275,11 +283,33 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 3. Fenomenin gönderim(posts) sayısını döndürün
 
 ÖRNEK: fenomenGonderimSayisi(fenomenler, 'Will Smith') çağrıldığında "136" dönmelidir
+{
+    "number": 5,
+    "profile": "Will Smith",
+    "followers": 72200000,
+    "posts": 136,
+    "platform": "TikTok"
+  },
 */
 
-function fenomenGonderimSayisi(/*kod*/){
-  /*kod*/
+function fenomenGonderimSayisi(fenomenler,fenomen_profil){
+  let kpyfenomen = fenomenler;
+  let fenomen_prf = fenomenler.profile;
+  // gelen profil ismini fenomen arrayinde bulacağım.
+    //for ile fenomen arrayinde gezerim.
+      for(var i=0;i<fenomenler.length;i++){
+        if(fenomenler[i].profile == fenomen_profil){
+          return fenomenler[i].posts;
+        }
+      }
+    // .profile == will smith olunca olanı bulurum.
+      
+    //bu fenomen onjesini alırım sonrada içinden alırım
+  // bu fenomenin post sayısını alıcağım.
+  //bu post sayısını geri döndürüceğim.
+  
 }
+console.log(fenomenGonderimSayisi(fenomenler,"Khabane lame"));
 
 
 
@@ -294,9 +324,17 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 Örnek: platformaGoreCokGonderiYapanFenomen(fenomenler, 'TikTok') çağrıldığında "charli damelio" dönmelidir
 */
 
-function platformaGoreCokGonderiYapanFenomen(/*kod*/){
-  /*kod*/
+function platformaGoreCokGonderiYapanFenomen(fenomenler,platform_ad){
+  var kpya_feno= fenomenler;
+  var fenomen_post = fenomenler.posts;
+  for(var i=0;i<fenomenler.length;i++){
+    if(fenomenler[i].posts > fenomen_post){
+      return fenomenler[i].posts;
+    }
+  }
+
 }
+console.log(platformaGoreCokGonderiYapanFenomen(fenomenler,'Tiktok'))
 
 
 
