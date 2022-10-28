@@ -216,7 +216,7 @@ Aşağıdakileri yapmak için fenomenSil'i kullanın:
 ÖRNEK: fenomenSil işlevi fenomenler dizisi ve 0 indeks sayısı ile çağrılırsa, veri kümemizden 'Instagram' kaldırılmış olarak döndürür. */
 function fenomenSil(fenomenler,i) {
   var kopyaFeno = fenomenler;
-  kopyaFeno.splice(i,0);
+  kopyaFeno.splice(i,1);
   return kopyaFeno;
 }
 
