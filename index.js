@@ -325,17 +325,27 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 */
 
 function platformaGoreCokGonderiYapanFenomen(fenomenler,platform_ad){
-  var kpya_feno= fenomenler;
-  var fenomen_post = fenomenler.posts;
-  for(var i=0;i<fenomenler.length;i++){
-    if(fenomenler[i].posts > fenomen_post){
-      return fenomenler[i].posts;
+  var max_post = 0;
+  var max_post_fenomen;
+  
+  for(var i=0;i<fenomenler.length;i++){//arrayın içinde dolaşıp platform adı eşit olanı bulucaz
+    //console.log(fenomenler[i].platform);
+    if(fenomenler[i].platform == platform_ad){  
+      if(fenomenler[i].post != "NA" && fenomenler[i].posts>max_post){
+            max_post = fenomenler[i].posts;
+            max_post_fenomen = fenomenler[i].profile;
+            console.log(fenomenler[i].profile);
+        }
+      }
     }
-  }
-
+  
+  return max_post_fenomen;
 }
-console.log(platformaGoreCokGonderiYapanFenomen(fenomenler,'Tiktok'))
+console.log(platformaGoreCokGonderiYapanFenomen(fenomenler,'Instagram'));
 
+
+//eşit olanların post sayısını alıcağız
+//en yüksek gönderi yapanı bulucaz
 
 
 /* ***** GÖREVLERİN SONU ***** */
